@@ -1,5 +1,8 @@
 #Ajax AutoComplete for jQuery
 
+## What this fork ads
+*  `onFocus` callback can now be extendable
+
 Ajax Autocomplete for jQuery allows you to easily create 
 autocomplete/autosuggest boxes for text input fields.
 
