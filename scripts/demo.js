@@ -43,6 +43,15 @@ $(function () {
         },
         onInvalidateSelection: function() {
             $('#selction-ajax').html('You selected: none');
+        },
+        onFocus: function (thiss) {
+            var that = thiss;
+
+            clearInterval(that.onChangeInterval);
+            that.currentValue = 'a';
+            that.selectedIndex = -1;
+
+            that.getSuggestions('a');
         }
     });
 
