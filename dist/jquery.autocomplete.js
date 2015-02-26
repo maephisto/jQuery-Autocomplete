@@ -61,6 +61,7 @@
                 serviceUrl: null,
                 lookup: null,
                 onSelect: null,
+                onFocus: null,
                 width: 'auto',
                 minChars: 1,
                 maxHeight: 300,
@@ -202,9 +203,13 @@
 
         onFocus: function () {
             var that = this;
-            that.fixPosition();
-            if (that.options.minChars <= that.el.val().length) {
-                that.onValueChange();
+            if (that.options.onFocus) {
+                this.options.onFocus(this);
+            } else {
+                that.fixPosition();
+                if (that.options.minChars <= that.el.val().length) {
+                    that.onValueChange();
+                }
             }
         },
 
